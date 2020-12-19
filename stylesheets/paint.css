@@ -1,0 +1,114 @@
+main {
+  max-width: 600px;
+  box-sizing: border-box;
+  background: silver;
+  margin: 20px auto 20px auto;
+  padding: 10px;
+  border: 8px groove grey;
+  border-radius: 5px;
+}
+
+h1 {
+  text-align: center;
+  margin: 0 0 20px 0;
+}
+
+p {
+  margin: 0;
+}
+
+.pixel {
+  display: inline-block;
+  position: absolute;
+}
+
+#menu {
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.swatchContainer div {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+}
+
+.red {
+  background: red;
+}
+
+.blue {
+  background: blue;
+}
+
+.green {
+  background: green;
+}
+
+.black {
+  background: black;
+}
+
+#canvas {
+  margin: 0 auto;
+  display: relative;
+  width: 500px;
+  height: 400px;
+	box-sizing: content-box;
+  border: 3px solid black;
+  border-radius: 3px;
+  background-color: white;
+}
+
+#brushes {
+  box-sizing: border-box;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+#swatches {
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.brushContainer {
+  width: 26px;
+  border: 1px solid black;
+  margin: 4px auto 0 auto;
+  background-color: white;
+}
+
+#size1, #size2, #size3 {
+  width: 20px;
+  margin: 5px auto;
+  background: black;
+}
+
+#size1 {
+  height: 2px;
+}
+
+#size2 {
+  height: 4px;
+}
+
+#size3 {
+  height: 8px;
+}
+
+.brushContainer.selected {
+  background-color: cyan;
+}
+
+.swatchContainer .selected {
+	box-sizing: border-box;
+  border: 2px solid yellow;
+}
+
+.reset {
+  align-self: center;
+  width: 70px;
+  height: 50px;
+}

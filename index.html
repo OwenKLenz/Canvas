@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Paint POC</title>
+    <meta charset="utf-8"/>
+    <script src="./javascripts/paint.js"></script>
+    <link rel="stylesheet" href="./stylesheets/paint.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Canvas</h1>
+
+      <div id="menu">
+
+        <div id="swatches">
+          <p>Select a color:</p>
+          <div class="swatchContainer">
+            <div class="green"></div>
+            <div class="blue"></div>
+            <div class="red"></div>
+            <div class="black selected"></div>
+          </div>
+        </div>
+
+        <div id="brushes">
+          <p>Select a brush size:</p>
+          <div class="brushSizes">
+            <div class="brushContainer selected" data-px="2px">
+              <div id="size1"></div>
+            </div>
+            <div class="brushContainer" data-px="4px">
+              <div id="size2"></div>
+            </div>
+            <div class="brushContainer" data-px="8px">
+              <div id="size3"></div>
+            </div>
+          </div>
+        </div>
+
+        <button class="reset">Reset Canvas</button>
+      </div>
+
+      <div id="canvas"></div>
+
+    </main>
+  </body>
+</html>
