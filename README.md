@@ -8,7 +8,7 @@ It's something I've been wanting to try for a while and I was pleased with how q
 
 - The ability to save your drawings (could be with a backend or maybe just using localStorage).
 - Adding a "paint can" option to fill regions in.
-- Ability to select colors by inputting hexcodes
+- ~~Ability to select colors by inputting hexcodes~~ Done!
 - "real" line functionality that isn't just a series of dots with a frequency limited by the ability of my browser to process `mousemove` events.
 - Other ideas?
 
