@@ -13,6 +13,7 @@ class DrawingBoard {
     this.canvasListeners();
     this.brushSizeListener();
     this.resetListener();
+    this.hexSubmitListener();
   }
 
   resetListener() {
@@ -22,6 +23,21 @@ class DrawingBoard {
     }
   }
 
+  hexSubmitListener() {
+    document.getElementById('customColor').addEventListener('submit', event => {
+      event.preventDefault();
+      let hexValue = new FormData(event.target).get('hexCode');
+
+      if (/^[0-9a-f]{3}$/.test(hexValue)) {
+        DrawingBoard.currentColor = '#' + hexValue;
+        document.getElementById('currentHexColor').innerText = '#' + hexValue;
+        document.querySelector('.swatchContainer .selected').classList.remove('selected');
+      } else {
+        document.getElementById('currentHexColor').innerText = 'Invalid Hex Code'; 
+      }
+    });
+  }
+
   swatchListener() {
     this.swatches.onclick =  event => { 
       let colorSwatch = event.target;
@@ -29,6 +45,7 @@ class DrawingBoard {
       if (!colorSwatch.classList.contains('swatches')) {
         DrawingBoard.currentColor = colorSwatch.classList[0];
         this.swapSelected(colorSwatch);
+        document.getElementById('currentHexColor').innerText = ''; 
       }
     };
   }
@@ -57,8 +74,8 @@ class DrawingBoard {
   canvasListeners() {
     this.canvas.onmousedown = event => {
       this.canvas.onmousemove = event => {
-        let x = event.clientX;
-        let y = event.clientY;
+        let x = event.pageX;
+        let y = event.pageY;
         this.drawPixel(x, y);
       };
     };
@@ -80,7 +97,8 @@ class DrawingBoard {
 class Pixel {
   constructor(x, y) {
     this.element = document.createElement('div');
-    this.element.classList.add('pixel', DrawingBoard.currentColor);
+    this.element.classList.add('pixel');
+    this.element.style.background = DrawingBoard.currentColor;
     this.element.style.top = String(y) + 'px';
     this.element.style.left = String(x) + 'px';
     this.element.style.height = DrawingBoard.brushSize;

@@ -1,11 +1,13 @@
 main {
   max-width: 600px;
   box-sizing: border-box;
-  background: silver;
+  background: #696;
   margin: 20px auto 20px auto;
   padding: 10px;
-  border: 8px groove grey;
+  border: 10px inset #585;
   border-radius: 5px;
+	color: #49ff33;
+	font-family: Verdana;
 }
 
 h1 {
@@ -15,6 +17,8 @@ h1 {
 
 p {
   margin: 0;
+	font-weight: bold;
+	margin-bottom: 5px;
 }
 
 .pixel {
@@ -26,6 +30,7 @@ p {
   text-align: center;
   margin: 0 auto;
   display: flex;
+  width: 90%;
   justify-content: space-evenly;
 }
 
@@ -57,7 +62,7 @@ p {
   width: 500px;
   height: 400px;
 	box-sizing: content-box;
-  border: 3px solid black;
+  border: 5px inset #484;
   border-radius: 3px;
   background-color: white;
 }
@@ -111,4 +116,7 @@ p {
   align-self: center;
   width: 70px;
   height: 50px;
+	background: #7a7;
+	color: #49ff33;
+	border: #585 outset 4px;
 }
