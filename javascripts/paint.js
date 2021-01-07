@@ -19,19 +19,22 @@ class DrawingBoard {
   resetListener() {
     document.querySelector('.reset').onclick = () => {
       this.canvas.innerHTML = '';
-
     }
   }
 
   hexSubmitListener() {
     document.getElementById('customColor').addEventListener('submit', event => {
       event.preventDefault();
-      let hexValue = new FormData(event.target).get('hexCode');
+      let hexCode = '#' + new FormData(event.target).get('hexCode');
 
-      if (/^[0-9a-f]{3}$/.test(hexValue)) {
-        DrawingBoard.currentColor = '#' + hexValue;
-        document.getElementById('currentHexColor').innerText = '#' + hexValue;
-        document.querySelector('.swatchContainer .selected').classList.remove('selected');
+      if (/^#[0-9a-f]{3}$/.test(hexCode)) {
+        DrawingBoard.currentColor = hexCode;
+        document.getElementById('currentHexColor').innerText = hexCode;
+        document.getElementById('currentHexColor').style.color = hexCode;
+        let selected = document.querySelector('.swatchContainer .selected');
+        if (selected) {
+          selected.classList.remove('selected');
+        }
       } else {
         document.getElementById('currentHexColor').innerText = 'Invalid Hex Code'; 
       }
