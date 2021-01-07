@@ -1,16 +1,16 @@
-# Simple Paint
+# Classic Paint
 
 A simple implementation of the classic Microsoft Paint program.
 
 This is something I've been wanting to try for a while and I was pleased with how quickly it came together.
 
-[Try it here!](https://bl.ocks.org/OwenKLenz/raw/8312321e79c957cbbd001bb8d1b30faa/)
+**[Try it here!](https://bl.ocks.org/OwenKLenz/raw/8312321e79c957cbbd001bb8d1b30faa/)**
 
 ### How It Works
 - `mousemove` events fire when the user clicks and drags the mouse on the canvas.
 - Each event places an absolutely positioned pixel (`div` element) of the selected color and brush size under the mouse pointer.
-- `click` event listeners are used to react to brush size and color selections and
-- When submitting a hex code color, logic in the event listener ensures that a valid hex code was entered and warns the user if not.
+- `click` event listeners are used to react to brush size and color selections
+- When submitting a hex code color, logic in the `submit` event listener ensures that a valid hex code was entered and warns the user if not.
 
 ### Features
 - 4 default colors to choose from
